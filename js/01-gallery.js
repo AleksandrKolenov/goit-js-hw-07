@@ -28,9 +28,26 @@ function createGalleryItems(galleryItems) {
 galleryContainer.addEventListener('click', onClick);
 
 function onClick(evt) {
-  // if (evt.target.nodeName !== 'BUTTON') {
-  //   return;
-  // }
-  console.log(evt.target.textContent);
-}
+  evt.preventDefault();
+  if (evt.target.nodeName !== 'IMG') {
+    return;
+  } else {
+        const urlOrig = evt.target.dataset.source;
+        basicLightbox.create(`<img src="${urlOrig}">`).show();    
+    } 
 
+};
+
+
+ 
+
+// window.addEventListener('keydown', onEscKeyPress);
+//  window.removeEventListener('keydown', onEscKeyPress);
+
+
+//  function onEscKeyPress(evt) {
+//    console.log(evt);
+// if (evt.code==='Escape') {
+    
+//    }
+//  };
